@@ -580,7 +580,8 @@ except:
         (centroids["x"] == selected_x_value)
         & (centroids["y"] == selected_y_value)
     ]
-    selected_cluster = df_selected_centroid['cluster'].iloc[0]
+    if df_selected_centroid:
+        selected_cluster = df_selected_centroid['cluster'].iloc[0]
 
 
 #def make_clickable(url, name):
