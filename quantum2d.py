@@ -328,13 +328,22 @@ def create_nx_graph(df: pd.DataFrame, cl:int) -> nx.Graph:
             row['paper_raw_affiliation_string'],
          #   weight = row['paper_cluster_score']
         )
-        g.add_edge(
+        try:
+            g.add_edge(
             row['paper_author_id'],
             row['id'],
             title=row['paper_author_display_name'] + ' :\n ' + \
             row['display_name'] + ' :\n ' + row['country_code'],
           #  weight = row['paper_cluster_score']
-        )
+            )
+        except:
+            g.add_edge(
+            row['paper_author_id'],
+            row['id'],
+           # title=row['paper_author_display_name'] + ' :\n ' + \
+           # row['display_name'] + ' :\n ' + row['country_code'],
+          #  weight = row['paper_cluster_score']
+            ) 
         g.add_edge(
             row['paper_id'],
             row['id'],
