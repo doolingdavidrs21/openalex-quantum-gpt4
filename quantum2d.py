@@ -580,7 +580,7 @@ except:
         (centroids["x"] == selected_x_value)
         & (centroids["y"] == selected_y_value)
     ]
-    if df_selected_centroid.any():
+    if df_selected_centroid is not None:
         selected_cluster = df_selected_centroid['cluster'].iloc[0]
 
 
