@@ -576,10 +576,12 @@ try:
 #st.write(topic_keywords)
 except:
     #pass
-    selected_cluster = centroids[
+    selected_cluster_list = centroids[
         (centroids["x"] == selected_x_value)
         & (centroids["y"] == selected_y_value)
-    ]['cluster'].to_list()[0]
+    ]['cluster'].to_list()
+    if selected_cluster_list:
+        selected_cluster = selected_cluster_list[0]
     #if df_selected_centroid is not None:
     #    selected_cluster = df_selected_centroid['cluster'].to_list()[0]
 
