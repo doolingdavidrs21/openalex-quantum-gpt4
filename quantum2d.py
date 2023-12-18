@@ -29,7 +29,7 @@ os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 # https://platform.openai.com/docs/models/gpt-3-5
 
-llm = ChatOpenAI(model_name = 'gpt-4', # 'gpt-3.5-turbo', # 'text-davinci-003' , 'gpt-3.5-turbo'
+llm = ChatOpenAI(model_name = 'gpt-4-1106-preview', # 'gpt-3.5-turbo', # 'text-davinci-003' , 'gpt-3.5-turbo'
              temperature=0.3,
              max_tokens=600)
 
